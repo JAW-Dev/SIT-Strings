@@ -309,17 +309,6 @@ form.woocommerce-checkout {
 	}
 }
 
-
-// Hide country from freontend because we only ship to US and dont ned to list it
-#shipping_country_field,
-#billing_country_field,
-#shipping_phone_field {
-	visibility: hidden;
-	height: 0;
-	opacity: 0;
-	margin: 0;
-}
-
 #order_comments_field {
 	margin: 1.5rem 0;
 }
