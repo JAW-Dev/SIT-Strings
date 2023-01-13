@@ -1,0 +1,25 @@
+// Gutter size options
+.bb-columns {
+  &,
+  .editor-styles-wrapper & {
+    &.is-style-narrow-gutters {
+      margin-right: -$grid-padding-sm;
+      margin-left: -$grid-padding-sm;
+
+      [class*="col-"] {
+        padding-right: $grid-padding-sm;
+        padding-left: $grid-padding-sm;
+      }
+    }
+
+    &.is-style-wide-gutters {
+      margin-right: -$grid-padding-lg;
+      margin-left: -$grid-padding-lg;
+
+      > .bb-column {
+        padding-right: $grid-padding-lg;
+        padding-left: $grid-padding-lg;
+      }
+    }
+  }
+}

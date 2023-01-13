@@ -1,0 +1,47 @@
+.animated-hero {
+  position: relative;
+  background-color: black;
+  min-height: 100vh;
+
+  &__animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      @extend .is-style-outline, .fill-dark;
+
+      color: #fff;
+      text-align: center;
+      opacity: 0.8;
+      font-size: calc(4rem + 5vw);
+
+      br {
+        display: none;
+      }
+
+      @media (orientation: portrait) {
+        font-size: calc(4.5rem + 6vw);
+
+        br {
+          display: block;
+        }
+      }
+    }
+  }
+}

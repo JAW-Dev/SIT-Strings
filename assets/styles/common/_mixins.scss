@@ -1,0 +1,82 @@
+@mixin font-smoothing($value: on) {
+  @if $value ==on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin grayscale($value) {
+  -webkit-filter: #{"grayscale(#{$value})"};
+ -moz-filter: #{"grayscale(#{$value})"};
+ filter:#{"grayscale(#{$value})"};
+
+}
+
+/* ----------------------------------------------------
+CUSTOM SCROLLBARS
+---------------------------------------------------- */
+// Settings
+$track-color: transparent;
+$thumb-color: lighten(#303030, 15%);
+$thumb-border-color: lighten(#303030, 15%);
+$spacer: 1rem;
+
+@mixin sharedScrollbarStyles() {
+  &::-webkit-scrollbar-track {
+    padding: $spacer;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-left: none;
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    outline: none;
+    border-top: none !important;
+    border-bottom: none !important;
+    // margin-left: 1.5rem;
+    // border-left: 1.5rem solid $gray-dark !important;
+    // border-right: 20rem solid $gray-dark !important;
+    border-radius: 5px !important;
+  }
+
+  // Firefox
+  scrollbar-color: $thumb-color $track-color;
+  scrollbar-width: thin;
+
+  // IE
+  scrollbar-base-color: $thumb-color;
+  scrollbar-face-color: $thumb-color;
+  scrollbar-track-color: $track-color;
+  scrollbar-3dlight-color: $thumb-color;
+  scrollbar-highlight-color: $thumb-color;
+  scrollbar-arrow-color: $track-color;
+  scrollbar-shadow-color: $thumb-color;
+  scrollbar-dark-shadow-color: $thumb-color;
+}
+
+// Vertical Scrollbar
+@mixin customScrollbar() {
+  &::-webkit-scrollbar {
+    width: calc(#{$spacer} * .5);
+  }
+
+  @include sharedScrollbarStyles();
+}
+
+// Horizontal Scrollbar
+@mixin customScrollbarHorz() {
+  &::-webkit-scrollbar {
+    width: 50%;
+    height: calc(#{$spacer} * .5);
+    padding: 0 calc(#{$spacer} * .5);
+  }
+
+  @include sharedScrollbarStyles();
+}

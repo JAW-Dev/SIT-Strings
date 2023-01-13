@@ -1,0 +1,162 @@
+{
+    "key": "group_6398a6b7afa42",
+    "title": "Product Videos",
+    "fields": [
+        {
+            "key": "field_6398a6b8f0ddc",
+            "label": "",
+            "name": "product_videos",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Video",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6398a74ef0ddd",
+                    "label": "Embed?",
+                    "name": "use_embed",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Choose whether to display local video or an embed from a site like YouTube, Vimeo, etc.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "choices": {
+                        "true": "True",
+                        "false": "False"
+                    },
+                    "default_value": "false",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_6398a6b8f0ddc"
+                },
+                {
+                    "key": "field_6398aa2377962",
+                    "label": "Video Thumbnail",
+                    "name": "video_thumbnail",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Include a thumbnail to display in the product gallery and, if using a local video, the cover image to display before the video loads.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": 150,
+                    "min_height": 150,
+                    "min_size": "",
+                    "max_width": 500,
+                    "max_height": 500,
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_6398a6b8f0ddc"
+                },
+                {
+                    "key": "field_6398a7c9f0dde",
+                    "label": "Video File",
+                    "name": "video_url",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "Add a direct link to a video file.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6398a74ef0ddd",
+                                "operator": "==",
+                                "value": "false"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_6398a6b8f0ddc"
+                },
+                {
+                    "key": "field_6398a836f0ddf",
+                    "label": "Video Embed",
+                    "name": "video_embed",
+                    "aria-label": "",
+                    "type": "oembed",
+                    "instructions": "Include the embed code copied from YouTube.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6398a74ef0ddd",
+                                "operator": "==",
+                                "value": "true"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "width": "",
+                    "height": "",
+                    "parent_repeater": "field_6398a6b8f0ddc"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1670969600
+}

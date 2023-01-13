@@ -1,0 +1,68 @@
+.artist-preview {
+	&__link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: inherit;
+
+			.artist-preview__image {
+				transform: translateY(-18px);
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		box-shadow: -12px 12px;
+		transition: transform 0.25s;
+
+		&::before {
+			content: "";
+			display: block;
+			padding-top: 100%;
+		}
+
+		img {
+			@include grayscale(100);
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.artist-single__related-artist:nth-child(1) & {
+			color: $red !important;
+		}
+
+		.artist-single__related-artist:nth-child(2) & {
+			color: $blue-light !important;
+		}
+
+		.artist-single__related-artist:nth-child(3) & {
+			color: $orange !important;
+		}
+
+		.artist-single__related-artist:nth-child(4) & {
+			color: $purple !important;
+		}
+	}
+
+	&__name {
+		font-family: $headings-font-family;
+		font-weight: $headings-font-weight;
+		text-transform: uppercase;
+	}
+
+	&__band {
+		font-family: $font-sans;
+		font-size: 14px;
+	}
+}

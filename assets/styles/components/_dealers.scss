@@ -1,0 +1,134 @@
+.dealer {
+	+ .dealer {
+		margin-top: map-get($spacers, 3);
+	}
+
+	&__address {
+		display: inline-block;
+		margin-bottom: map-get($spacers, 3);
+		line-height: 1.55;
+	}
+
+	address {
+		display: block;
+	}
+
+	&__email-link {
+		display: inline-flex;
+		align-items: center;
+		line-height: 1;
+
+		svg {
+			width: 1em;
+			height: auto;
+			margin-right: 0.5em;
+		}
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+// Google Maps InfoWindow
+.gm-style-iw {
+	button.gm-ui-hover-effect[title*="Close"] {
+		top: 0 !important;
+		right: 0 !important;
+	}
+
+	.dealer {
+		padding: 0.25rem 1.5rem 0.25rem 0.25rem;
+		font-family: $font-family-base;
+	}
+}
+
+.cluster {
+	img {
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%);
+	}
+	div {
+		color: #fff !important;
+	}
+}
+
+details.dealer-wrap {
+	position: relative;
+	margin-block: 2rem;
+
+	& > div {
+		margin-top: 1.5rem;
+	}
+
+	summary {
+		position: relative;
+		list-style: none;
+		padding-left: 2rem;
+
+		h2 {
+			margin-bottom: 0;
+		}
+
+		&::marker,
+		&::-webkit-details-marker {
+			display: none !important;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			display: block;
+			height: 6px;
+			width: 24px;
+			background: black;
+			top: 50%;
+			transition: transform 120ms ease-in-out;
+			transform: translateY(-50%);
+		}
+
+		&::before {
+			transform: translateY(-50%) rotate(90deg);
+		}
+
+		h2 {
+			display: inline-block;
+		}
+	}
+
+	&[open] {
+		margin-bottom: 0;
+
+		summary {
+			margin-bottom: 0;
+
+			&::before,
+			&::after {
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+	}
+}
+
+.dealer-search {
+	&__input-wrap {
+		position: relative;
+		max-width: 500px;
+
+		button {
+			position: absolute;
+			border: none !important;
+			background: transparent !important;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	.btn-outline {
+		padding: 0.5rem 0.75rem;
+		border: 1px solid $black;
+	}
+}

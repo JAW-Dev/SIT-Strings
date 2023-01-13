@@ -1,0 +1,53 @@
+.accordion {
+  position: relative;
+  width: 100%;
+
+  .card {
+    padding: 0;
+    border: 0;
+    max-width: none;
+
+    & + .card {
+      margin-top: -1px;
+    }
+  }
+
+  &__header {
+    background: $white;
+    border: 1px solid $black;
+    margin-bottom: 0 !important;
+  }
+
+  &__toggle {
+    @extend .btn, .btn-block;
+
+    position: relative;
+    padding: map-get($spacers, 3);
+    padding-right: 2.75rem;
+    text-align: left;
+    font-weight: 400;
+    background: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+    }
+
+    svg {
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 1rem;
+      transform: rotateX(180deg);
+    }
+
+    &.collapsed svg {
+      transform: rotateX(0);
+    }
+  }
+
+  &__content {
+    background: $off-white;
+  }
+}

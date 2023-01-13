@@ -1,0 +1,12 @@
+{
+  "phpVersion": "7.4",
+  "braceStyle": "1tbs",
+  "overrides": [
+    {
+      "files": "**/*.php",
+      "options": {
+        "printWidth": 140
+      }
+    }
+  ]
+}

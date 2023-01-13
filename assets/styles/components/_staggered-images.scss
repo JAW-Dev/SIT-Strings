@@ -1,0 +1,89 @@
+.staggered-images {
+  @include media-breakpoint-up(md) {
+    padding-bottom: 4.25rem;
+  }
+}
+
+.staggered-images__col {
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: $blue;
+    transition: $transition-base;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: darken($blue, 7%);
+    }
+  }
+
+  figcaption {
+    font-family: $font-sans-headings;
+    min-height: $grid-gutter-width-lg + 0.75rem;
+    padding: 1.5rem 0 1rem 0;
+  }
+
+  &:nth-child(n + 2) {
+    a {
+      color: $red;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken($red, 7%);
+      }
+    }
+  }
+
+  &:nth-child(n + 3) {
+    a {
+      color: $orange;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken($orange, 7%);
+      }
+    }
+  }
+
+  &:nth-child(n + 4) {
+    a {
+      color: $purple;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken($purple, 7%);
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    img {
+      @extend .shadow-left;
+    }
+  }
+
+  &:nth-child(even) {
+    img {
+      @extend .shadow-right;
+    }
+
+    figcaption {
+      padding-left: 12px;
+    }
+
+    @include media-breakpoint-up(md) {
+      transform: translateY(4.25rem);
+    }
+  }
+}

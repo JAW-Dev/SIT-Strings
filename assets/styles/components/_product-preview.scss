@@ -1,0 +1,58 @@
+.product-preview {
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		position: relative;
+		max-width: 196px;
+	}
+
+	&__category {
+		margin-bottom: 0.5em;
+
+		&,
+		& a {
+			color: $blue-dark;
+			@include font-size(9px);
+			line-height: 11px;
+			text-transform: uppercase;
+		}
+	}
+
+	&__name {
+		color: $black;
+	}
+
+	&__price {
+		@include font-size(14px);
+	}
+
+	&__description {
+		@include font-size(14px);
+
+		& > p {
+			display: none;
+			margin-bottom: 0;
+
+			&:first-child {
+				display: block;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+
+	.wp-block-button {
+		margin-top: auto;
+	}
+
+	del {
+		margin-left: 0.5rem;
+		color: $gray-light;
+		font-weight: normal;
+		text-decoration-thickness: 1px;
+	}
+}

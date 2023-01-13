@@ -1,0 +1,24 @@
+.product-filters {
+	.badge {
+		font-size: rem(14);
+		padding: .75rem 1rem;
+		border: 1px solid $dark;
+		background-color: $white;
+		color: $dark;
+
+		&:hover, &:focus-visible {
+			background-color: $dark;
+			color: $white;
+		}
+
+		&.is-active {
+			background-color: $dark;
+			color: $white;
+
+			&:hover, &:focus-visible {
+				background-color: $dark;
+				color: $white;
+			}
+		}
+	}
+}

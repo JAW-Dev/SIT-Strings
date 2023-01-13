@@ -1,0 +1,55 @@
+.diagonal-image-callout {
+  position: relative;
+  background: $off-white;
+  overflow: hidden;
+
+  &__content {
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    min-height: 370px;
+    background-size: cover;
+    background-position: 0 50%;
+    position: relative;
+    margin-top: -4.5rem;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 144%;
+    }
+
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+
+      @include media-breakpoint-up(md) {
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      margin-top: 0;
+    }
+  }
+}

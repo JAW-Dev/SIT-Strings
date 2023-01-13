@@ -1,0 +1,9 @@
+.archive[class*="tax-product"] {
+  .archive-description {
+    margin-top: map-get($spacers, 4);
+
+    .term-description > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

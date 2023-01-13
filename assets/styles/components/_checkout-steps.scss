@@ -1,0 +1,25 @@
+.checkout-steps {
+	display: flex;
+
+	.checkout-steps__step {
+		&.disabled {
+			opacity: 0.2;
+		}
+
+		&.current {
+			color: $white !important;
+			background: $black;
+		}
+	}
+
+	a:hover {
+		color: $white !important;
+		text-decoration: none;
+		background: $black;
+	}
+
+	a.disabled:hover {
+		color: $black !important;
+		background: $white !important;
+	}
+}

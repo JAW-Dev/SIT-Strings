@@ -1,0 +1,53 @@
+{
+  "name": "carney/sit-strings",
+  "license": "MIT",
+  "description": "Composer packages for SIT Strings",
+  "authors": [
+    {
+      "name": "Carney",
+      "email": "dev.team@carney.co",
+      "homepage": "http://carney.co"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "git@carney.codes:wp-plugins/building-blocks.git"
+    }
+  ],
+  "require": {
+    "carney/building-blocks": "dev-master",
+    "wpackagist-plugin/contact-form-7": "*",
+    "wpackagist-plugin/contact-form-entries": "*",
+    "wpackagist-plugin/duplicate-post": "*",
+    "wpackagist-plugin/enable-media-replace": "*",
+    "wpackagist-plugin/jetpack": "*",
+    "wpackagist-plugin/listo": "*",
+    "wpackagist-plugin/multifile-upload-field-for-contact-form-7": "*",
+    "wpackagist-plugin/relevanssi": "*",
+    "wpackagist-plugin/safe-svg": "*",
+    "wpackagist-plugin/seo-by-rank-math": "*",
+    "wpackagist-plugin/simple-custom-post-order": "*",
+    "wpackagist-plugin/woocommerce-gateway-stripe": "*",
+    "wpackagist-plugin/woocommerce-paypal-payments": "*",
+    "wpackagist-plugin/woocommerce-services": "*",
+    "wpackagist-plugin/woocommerce": "*",
+    "wpackagist-plugin/wordfence": "*",
+    "wpackagist-plugin/wordpress-importer": "*",
+    "wpackagist-plugin/wp-mail-smtp": "*"
+  },
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}": [
+        "type:wordpress-plugin"
+      ]
+    }
+  }
+}

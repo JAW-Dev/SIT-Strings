@@ -1,0 +1,163 @@
+/** Fonts */
+$font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+$font-sans-headings: "Archivo Black", sans-serif;
+$font-family-base: $font-sans;
+$font-family-button: $font-sans-headings;
+$enable-responsive-font-sizes: true;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+$font-size-base: 1rem;
+$font-size-scale: 1.315;
+$h6-font-size: $font-size-base; // 16px
+$h5-font-size: $h6-font-size * $font-size-scale; // 21px
+$h4-font-size: $h5-font-size * $font-size-scale; // 28px
+$h3-font-size: $h4-font-size * $font-size-scale; // 36px
+$h2-font-size: $h3-font-size * $font-size-scale; // 48px
+$h1-font-size: $h2-font-size * $font-size-scale; // 63px
+$lead-font-size: 1.125 * $font-size-base;
+
+$headings-font-family: $font-sans-headings;
+$headings-font-weight: $font-weight-normal;
+$headings-line-height: 1.025;
+$headings-margin-bottom: 1rem;
+
+$line-height-base: 1.25;
+$line-height-sm: 1.25;
+$line-height-lg: 1.25;
+
+/** Colors */
+$red: #bf1e2e;
+$red-light: #f85857;
+$red-dark: #870006;
+
+$orange: #fb5543;
+$orange-light: #ff886f;
+$orange-dark: #c1191a;
+
+$purple: #7b61ff;
+$purple-light: #b290ff;
+$purple-dark: #3f35cb;
+
+$blue: #74d3f5;
+$blue-light: #a9ffff;
+$blue-dark: #3aa2c2;
+
+$gray: #303030;
+$gray-light: #626262;
+$gray-dark: #0e0e0e;
+
+$gray-lighter: #ced4da;
+$gray-lightest: #e9ecef;
+
+$black: $gray-dark;
+$white: #ffffff;
+$off-white: #f2f2f2;
+
+$dark: $gray-dark;
+$light: $white;
+$primary: $red;
+$secondary: $blue;
+$info: $blue;
+$warning: $orange-light;
+$danger: $red;
+
+$theme-colors: (
+  "off-white": $off-white,
+);
+
+$wp-colors: (
+  "red": $red,
+  "red-light": $red-light,
+  "red-dark": $red-dark,
+  "orange": $orange,
+  "orange-light": $orange-light,
+  "orange-dark": $orange-dark,
+  "purple": $purple,
+  "purple-light": $purple-light,
+  "purple-dark": $purple-dark,
+  "blue": $blue,
+  "blue-light": $blue-light,
+  "blue-dark": $blue-dark,
+  "gray": $gray,
+  "gray-light": $gray-light,
+  "gray-dark": $gray-dark,
+  "gray-lighter": $gray-lighter,
+  "gray-lightest": $gray-lightest,
+  "black": $black,
+  "white": $white,
+);
+
+/** Body */
+$body-bg: $white;
+$body-color: $black;
+
+/** Grid */
+$grid-gutter-width: 3rem; // 48px
+$grid-padding: $grid-gutter-width / 2;
+
+$grid-gutter-width-sm: 1.5rem; // 24px
+$grid-padding-sm: $grid-gutter-width-sm / 2;
+
+$grid-gutter-width-lg: 5rem; // 80px
+$grid-padding-lg: $grid-gutter-width-lg / 2;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Set the lowest container to our max-width so the site responds in a fluid-way, without the harsh jumps between sizes
+$max-width: 1344px;
+$container-max-widths: (
+  sm: $max-width,
+);
+
+/** Spacing */
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  sm: $spacer * 4,
+  md: $spacer * 6,
+  lg: $spacer * 8,
+  xl: $spacer * 10,
+);
+
+$negative-spacers: negativify-map($spacers);
+
+/** Buttons + Forms */
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$input-btn-line-height: 1.5;
+$input-btn-padding-x: 1.25rem;
+
+$input-color: $black;
+$input-border-color: $black;
+$input-placeholder-color: $gray-light;
+$input-padding-y: 0.4375rem;
+$input-padding-x: 0.75rem;
+
+$btn-font-weight: $font-weight-bolder;
+
+/** Utility */
+$overflows: auto, hidden, visible;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;

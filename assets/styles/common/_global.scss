@@ -1,0 +1,30 @@
+html,
+:root {
+  &:not(.editor-styles-wrapper) {
+    scroll-behavior: smooth;
+    background-color: $black;
+  }
+}
+
+body.page-template-strings {
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 759 2789'%3E%3Cpath d='M405 0 1 2788M484 0 80 2788M563 0 159 2788M642 0 238 2788M721 0 317 2788M800 0 396 2788' stroke='%23D5D5D5'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p:empty {
+  display: none;
+}
+
+.no-transition {
+  transition: none !important;
+}

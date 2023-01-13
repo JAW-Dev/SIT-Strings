@@ -1,0 +1,122 @@
+.wave-wrapped-section {
+  @extend .has-black-background-color, .has-white-color;
+
+  &__col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      padding-top: map-get($spacers, sm);
+      padding-bottom: map-get($spacers, sm);
+    }
+  }
+
+  &__left,
+  &__right {
+    height: 225px;
+    position: relative;
+
+    img {
+      width: 225px;
+      height: 100vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      object-fit: cover;
+    }
+  }
+
+  // top on mobile
+  &__right {
+    order: -1;
+
+    img {
+      object-position: 0% 50%;
+    }
+  }
+
+  // bottom on mobile
+  &__left {
+    order: 3;
+
+    img {
+      object-position: 100% 50%;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__left,
+    &__right {
+      height: 100%;
+      width: calc((100vw - 100%) / 2);
+      position: absolute;
+      top: 0;
+      transform-origin: 50% 50%;
+      pointer-events: none;
+
+      img {
+        max-width: none;
+        position: static;
+        width: 100%;
+        height: 100%;
+        transform: none;
+      }
+    }
+
+    &__left {
+      right: 100%;
+
+      img {
+        object-position: 100% 50%;
+      }
+    }
+
+    &__right {
+      left: 100%;
+
+      img {
+        object-position: 0% 50%;
+      }
+    }
+
+    &--flip-y {
+      .wave-wrapped-section__left,
+      .wave-wrapped-section__right {
+        transform: scaleY(-1);
+      }
+    }
+
+    &--flip-x {
+      .wave-wrapped-section__left,
+      .wave-wrapped-section__right {
+        transform: scaleX(-1);
+      }
+
+      .wave-wrapped-section__left {
+        right: auto;
+        left: 100%;
+      }
+
+      .wave-wrapped-section__right {
+        left: auto;
+        right: 100%;
+      }
+
+      // flip both
+      &.wave-wrapped-section--flip-y {
+        .wave-wrapped-section__left,
+        .wave-wrapped-section__right {
+          transform: scale(-1);
+        }
+      }
+    }
+  }
+}

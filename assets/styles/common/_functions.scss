@@ -1,0 +1,15 @@
+/*
+Strip unit
+- https://css-tricks.com/snippets/sass/strip-unit-function/
+*/
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+/*
+PX to REM
+- font-size: rem(24);
+ */
+@function rem($pxValue) {
+    @return #{strip-unit($pxValue) / strip-unit(16px)}rem;
+}

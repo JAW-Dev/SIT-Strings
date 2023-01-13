@@ -1,0 +1,6 @@
+<svg class="menu-toggle" width="39" height="28" viewBox="0 0 39 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle class="menu-toggle__circle" cx="19.25" cy="14" r="12" stroke="currentColor" stroke-width="1.75"/>
+<path class="menu-toggle__line top" d="M1.25 8H37.25" stroke="currentColor" stroke-width="1.75"/>
+<path class="menu-toggle__line middle" d="M1.25 14H37.25" stroke="currentColor" stroke-width="1.75"/>
+<path class="menu-toggle__line bottom" d="M1.25 20H37.25" stroke="currentColor" stroke-width="1.75"/>
+</svg>

@@ -1,0 +1,112 @@
+.btn {
+  @include font-smoothing(on);
+
+  display: inline-flex;
+
+  :not(.is-style-outline) > &:not([class*="btn-outline"]) {
+    border-color: transparent !important;
+  }
+
+  &.is-uppercase,
+  .wp-block-buttons.is-uppercase & {
+    text-transform: uppercase;
+  }
+
+  &.is-bold,
+  .wp-block-buttons.is-bold & {
+    text-transform: uppercase;
+    font-family: $headings-font-family;
+    font-weight: $font-weight-normal;
+  }
+
+  &.is-rounded {
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
+
+    @extend .rounded-pill;
+  }
+
+  &.is-lg,
+  .wp-block-buttons.is-lg & {
+    @extend .btn-lg;
+  }
+
+  &.is-sm,
+  .wp-block-buttons.is-sm & {
+    @extend .btn-sm;
+  }
+}
+
+.wp-block-button {
+  img {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .wp-block-button__link {
+    @extend .btn;
+  }
+
+  &.is-style-fill-rounded,
+  &.is-style-outline-rounded {
+    .wp-block-button__link {
+      @extend .is-rounded;
+    }
+  }
+
+  &:not(.is-style-outline):not(.is-style-outline-rounded) {
+    .wp-block-button__link {
+      &:not(.has-background) {
+        @extend .btn-dark;
+      }
+
+      @each $infix, $color in $theme-colors {
+        &.has-#{$infix}-background-color {
+          @extend .btn-#{$infix};
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: darken($color, 7.5%) !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-style-outline,
+  &.is-style-outline-rounded {
+    .wp-block-button__link {
+      &:not(.has-text-color) {
+        @extend .btn-outline-dark;
+      }
+
+      @each $infix, $color in $theme-colors {
+        &.has-#{$infix}-color {
+          @extend .btn-outline-#{$infix};
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          &:not(.has-background) {
+            color: $dark !important;
+
+            &:not(.has-text-color),
+            &.has-midnight-blue-color {
+              color: white !important;
+            }
+          }
+
+          &.has-#{$infix}-background-color {
+            color: $color !important;
+          }
+
+          &.has-#{$infix}-color {
+            background-color: $color !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.product-slider {
+  position: relative;
+  user-select: none;
+
+  .container {
+    position: relative;
+  }
+
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .tns-slider {
+    cursor: grab;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 2;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__item {
+    max-width: 330px;
+    border-right: 1px solid #b6b6b6;
+    transition: border-right-color 0.25s;
+
+    &:last-child {
+      border: 0;
+    }
+
+    &.tns-item {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .tns-prev,
+  .tns-next {
+    border: none;
+    padding: 0;
+    background: transparent;
+    transform-origin: center center;
+    height: 50px;
+    aspect-ratio: 1/1;
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      height: 100%;
+      width: 100%;
+      fill: white;
+    }
+
+    &[disabled],
+    &[style*="display: none"] {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  .tns-prev {
+    left: -25px;
+  }
+
+  .tns-next {
+    right: -25px;
+  }
+
+  // nav (dots) needs to be enabled for accurate page count
+  // (tinySlider.info.pages) -- but we can hide it
+  .tns-nav {
+    display: none;
+  }
+
+  &--no-controls {
+    .tns-prev,
+    .tns-next {
+      display: none !important;
+    }
+  }
+
+  // for category variant added to homepage
+  &.category-slider {
+    .product-preview {
+      &__description {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $max-width) {
+    &__inner {
+      margin-bottom: 5rem;
+    }
+
+    &__item {
+      &:not(.tns-slide-active) {
+        border-right-color: transparent;
+      }
+    }
+
+    .tns-prev,
+    .tns-next {
+      top: calc(100% + 3.5rem);
+    }
+
+    .tns-prev {
+      left: 1.5rem;
+    }
+
+    .tns-next {
+      right: 1.5rem;
+    }
+
+    &--no-controls {
+      .product-slider__inner {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

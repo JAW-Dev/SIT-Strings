@@ -1,0 +1,140 @@
+@each $axis in (x, y) {
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			.overflow-#{$axis}#{$infix}-hidden {
+				overflow-#{$axis}: hidden;
+			}
+
+			.overflow-#{$axis}#{$infix}-visible {
+				overflow-#{$axis}: visible;
+			}
+		}
+	}
+}
+
+.is-locked {
+	overflow: hidden;
+	touch-action: none;
+}
+
+.extend {
+	height: 100%;
+	overflow: visible;
+
+	&.col,
+	&.bb-column,
+	&[class*="col-"] {
+		height: auto;
+	}
+
+	&__inner {
+		display: flex;
+		width: 100vw;
+		height: 100%;
+		position: relative;
+
+		@include media-breakpoint-up(lg) {
+			width: calc(100% + #{$grid-padding});
+		}
+
+		@media (min-width: $max-width - 1px) {
+			width: calc(100% + #{$grid-padding} + (100vw - #{$max-width}) / 2);
+		}
+	}
+
+	&--right {
+		margin-left: -$grid-padding;
+
+		@include media-breakpoint-up(lg) {
+			margin-left: 0;
+		}
+	}
+
+	&--left {
+		margin-right: -$grid-padding;
+
+		@include media-breakpoint-up(lg) {
+			margin-right: 0;
+		}
+	}
+
+	&--md {
+		.extend__inner {
+			@include media-breakpoint-up(md) {
+				width: calc(100% + #{$grid-padding});
+			}
+
+			@media (min-width: $max-width - 1px) {
+				width: calc(
+					100% + #{$grid-padding} + (100vw - #{$max-width}) / 2
+				);
+			}
+		}
+
+		&--right {
+			@include media-breakpoint-up(md) {
+				margin-left: 0;
+			}
+		}
+
+		&--left {
+			@include media-breakpoint-up(md) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.shadow-left {
+	box-shadow: -12px 12px;
+}
+
+.shadow-right {
+	box-shadow: 12px 12px;
+}
+
+.link-white {
+	color: $white;
+	text-decoration: underline;
+
+	&:hover {
+		color: $white;
+		opacity: 0.75;
+	}
+}
+
+.link-red {
+	color: $red !important;
+	text-decoration: underline !important;
+
+	&:hover {
+		color: $red-dark !important;
+	}
+}
+
+.line-height-lg {
+	line-height: 1.5;
+}
+
+// Helpful wrapper when we want to modify output content from a WYSIWYG field, or <InnerBlocks/>
+.adjust-wysiwyg {
+	// Remove the margin bottom from the last child of this div; helpful when we want to remove the default margin-bottom of the <p> to better align our copy in the space
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
+.visually-hidden {
+	position: absolute;
+	display: block;
+	height: 0;
+	width: 0;
+	opacity: 0;
+	transform: translateX(-9999999px) translateY(-9999999px);
+}
+
+.noscroll {
+	overflow: hidden;
+}

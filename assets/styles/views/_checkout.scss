@@ -1,0 +1,325 @@
+.woocommerce-checkout {
+	background: $off-white;
+
+	&__cart-link {
+		color: $black;
+
+		svg {
+			height: 16px;
+			width: 16px;
+			transform: rotate(180deg);
+		}
+	}
+
+	&__heading {
+		-webkit-text-stroke: 1px $black;
+		-webkit-text-fill-color: $white;
+	}
+
+	&__subheading {
+		font-family: $font-sans-headings;
+		font-size: 24px;
+	}
+
+	.woocommerce-checkout-form {
+		background: $white;
+		border: 1px solid $black;
+
+		.form-row {
+			padding: 0;
+			flex-direction: column;
+		}
+
+		&[data-checkout-step="login"] {
+
+			.form-row-first,
+			.form-row-last {
+				float: none;
+				margin-bottom: map-get($spacers, 3);
+
+				label {
+					line-height: inherit;
+				}
+			}
+		}
+	}
+
+	.input-text,
+	.country_select,
+	.state_select {
+		@extend .form-control;
+	}
+
+	&__section,
+	&__aside {
+		h3 {
+			font-size: 24px;
+		}
+	}
+
+	&__section {
+		a:not(.btn) {
+			color: $black;
+			text-decoration: underline;
+		}
+	}
+
+	&__main,
+	&__aside {
+		background: $white;
+		border: 1px solid $black;
+	}
+
+	.woocommerce-checkout-payment#payment {
+		background: transparent;
+
+		.payment_box {
+			background: $white;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		#place_order {
+			float: none;
+		}
+
+		.form-check {
+			padding: 0;
+		}
+
+		label.invisible {
+			height: 0;
+			margin: 0;
+		}
+
+		input[type="text"] {
+			@extend .form-control;
+		}
+	}
+
+	.wc-saved-payment-methods {
+		padding: 0;
+	}
+
+	.woocommerce-checkout-review-order {
+		h2 {
+			font-size: 24px;
+		}
+
+		th,
+		td {
+			padding: 4px 0;
+			border-top: 0 !important;
+		}
+
+		.shipping-calculator-button:after {
+			display: none;
+		}
+
+		.woocommerce-shipping-totals td {
+			width: 100%;
+		}
+
+		.order-total {
+
+			th,
+			td {
+				border-top: 1px solid $black !important;
+			}
+
+			strong {
+				font-weight: normal;
+			}
+		}
+
+		.order-total,
+		.tax-total {
+
+			th,
+			td {
+				line-height: 30px;
+			}
+		}
+
+		.table {
+			tbody {
+				display: flex;
+				flex-direction: column;
+			}
+
+			tr {
+				display: flex;
+			}
+		}
+	}
+
+	.woocommerce-terms-and-conditions-wrapper {
+		display: none;
+	}
+}
+
+.wc-stripe-elements-field {
+	@extend .form-control;
+
+	display: flex;
+
+	&> :first-child {
+		flex: 1;
+	}
+
+	iframe {
+		position: relative;
+		top: 0.25em;
+	}
+}
+
+form.woocommerce-checkout {
+	background: inherit;
+}
+
+.wc-checkout {
+	nav ul {
+		padding: 0;
+		list-style: none;
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		li {
+			.btn {
+				width: 100%;
+
+				@include media-breakpoint-up(md) {
+					width: auto;
+				}
+			}
+		}
+	}
+
+	div[data-checkout-step] {
+
+		@include media-breakpoint-up(md) {
+			max-width: 80%;
+			min-width: rem(480);
+		}
+	}
+
+	&[data-current-step="login"] {
+		nav a[data-checkout-target="login"] {
+			background: $black;
+			color: $white;
+		}
+	}
+
+	&[data-current-step="shipping"] {
+
+		nav a[data-checkout-target="login"],
+		nav a[data-checkout-target="shipping"] {
+			background: $black;
+			color: $white;
+		}
+	}
+
+	&[data-current-step="payment"] {
+		nav a:not([data-checkout-target="review"]) {
+			background: $black;
+			color: $white;
+		}
+	}
+}
+
+.woocommerce-form__label-for-checkbox {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	&::before {
+		content: "";
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		margin-right: 0.5rem;
+		height: 1.5rem;
+		width: 1.5rem;
+		border: 1px solid $black;
+		color: $white;
+	}
+}
+
+#bill-to-different-address-checkbox~#billing {
+	display: none;
+}
+
+#bill-to-different-address-checkbox:checked+.woocommerce-form__label-for-checkbox {
+	&::before {
+		background: $black;
+		content: "✓";
+	}
+
+	&~#billing {
+		display: block;
+	}
+}
+
+.payment_box {
+	padding: 0 !important;
+	background: $white !important;
+}
+
+#payment .form-row {
+	padding: 0 !important;
+}
+
+#bill-to-different-address-checkbox,
+#createaccount,
+#rememberme {
+	display: none;
+}
+
+.woocommerce {
+	form {
+		.form-row {
+			padding: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+
+			&[id$="1_field"] {
+				margin-bottom: 0.5rem;
+			}
+
+			label {
+				line-height: 1;
+			}
+		}
+	}
+}
+
+#rememberme:checked~.woocommerce-form__label-for-checkbox,
+#createaccount:checked~.woocommerce-form__label-for-checkbox {
+	&::before {
+		background: $black;
+		content: "✓";
+	}
+}
+
+
+// Hide country from freontend because we only ship to US and dont ned to list it
+#shipping_country_field,
+#billing_country_field,
+#shipping_phone_field {
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	margin: 0;
+}
+
+#order_comments_field {
+	margin: 1.5rem 0;
+}

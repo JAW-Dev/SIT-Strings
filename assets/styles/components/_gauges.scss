@@ -1,0 +1,31 @@
+.gauges {
+  &__table {
+    border: 1px solid $black;
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+    }
+
+    @include media-breakpoint-up(md) {
+      overflow: auto;
+    }
+  }
+
+  &__row {
+    flex-wrap: nowrap;
+
+    @include media-breakpoint-down(md) {
+      display: inline-flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+
+  &__column {
+    border: 1px solid $black;
+
+    @include media-breakpoint-up(md) {
+      min-width: 100px;
+    }
+  }
+}

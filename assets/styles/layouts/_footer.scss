@@ -1,0 +1,93 @@
+footer.bottom {
+  @extend .has-white-color, .has-black-background-color;
+
+  position: relative;
+  border-top: 1px solid white;
+  line-height: 1.5;
+
+  a {
+    @extend .text-white;
+  }
+
+  .menu {
+    column-count: 2;
+    gap: $grid-padding;
+
+    &,
+    ul {
+      @extend .list-unstyled;
+    }
+
+    // all menu items
+    li {
+      margin-bottom: 0.25em;
+    }
+
+    // top-level items
+    &>li {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom: 1.25em;
+
+      &>a {
+        font-family: $headings-font-family;
+        text-transform: uppercase;
+      }
+
+      // sub-menu
+      &>ul {
+        break-inside: avoid;
+        margin-top: 0.75em;
+      }
+    }
+  }
+
+  .wp-block-social-links {
+    @extend .row;
+
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .wp-social-link {
+    @extend .col-auto;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 !important;
+  }
+
+  .wp-block-social-link-anchor {
+    border: 1px solid currentColor;
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #000;
+      filter: invert(1);
+    }
+  }
+}
+
+
+// Footer Sign in link
+footer.bottom .footer-sign-in {
+  color: $gray-lighter;
+  font-size: rem(15);
+  gap: .75ch;
+
+  a {
+    color: $gray-lighter !important;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}

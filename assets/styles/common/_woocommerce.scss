@@ -1,0 +1,35 @@
+.woocommerce {
+	.u-column1.col-1,
+	.u-column2.col-2 {
+		max-width: none;
+		flex: unset;
+	}
+
+	.woocommerce-form-row.form-row,
+	form .form-row {
+		display: block;
+	}
+
+	.woocommerce-Input,
+	.country_select,
+	.state_select {
+		@extend .form-control;
+	}
+
+	&-variation-price {
+		.price {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+		}
+		ins {
+			color: $red;
+			font-weight: normal !important;
+			text-decoration: none;
+		}
+	}
+}
+
+.wc-checkout {
+	border: 1px solid $black;
+}
